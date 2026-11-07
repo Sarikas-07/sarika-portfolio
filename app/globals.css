@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; background: #070A13; }
+body { @apply bg-ink-950 font-sans text-fg antialiased; }
+section[id] { scroll-margin-top: 5rem; }
+::selection { background: rgba(77, 141, 255, 0.35); }
+:focus-visible { outline: 2px solid #8db8ff; outline-offset: 3px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .section { @apply py-24 sm:py-32; }
+
+  /* Glass card */
+  .card {
+    @apply relative rounded-2xl border border-white/10 bg-white/[0.035] backdrop-blur-md;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 24px 48px -28px rgba(0, 0, 0, 0.7);
+  }
+  .card-hover { @apply transition duration-300 hover:-translate-y-0.5 hover:border-electric/40 hover:bg-white/[0.06]; }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-200;
+  }
+  .btn-primary {
+    @apply text-white shadow-[0_10px_30px_-10px_rgba(77,141,255,0.8)] hover:brightness-110;
+    background: linear-gradient(120deg, #4d8dff 0%, #8b6cff 100%);
+  }
+  .btn-ghost { @apply border border-white/15 bg-white/[0.04] text-fg hover:border-electric/50 hover:bg-white/[0.08]; }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[13px] text-fg-muted;
+  }
+  .text-gradient {
+    background: linear-gradient(110deg, #8db8ff 0%, #b9a8ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
