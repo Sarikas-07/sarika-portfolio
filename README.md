@@ -1,189 +1,319 @@
-# Sarika Ghorpade — Portfolio
+ # Sarika Ghorpade — Portfolio
 
-Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion · Lucide icons.
-No database, no paid API, no backend. All your content lives in `src/data/`.
+**Live Portfolio:** https://sarika-portfolio-iota.vercel.app
 
----
+**GitHub Repository:** https://github.com/Sarikas-07/portfolio
 
-## 1. Software you need
-- **Node.js 20 or newer (LTS)** — https://nodejs.org  (check with `node -v`)
-- **VS Code** — https://code.visualstudio.com
-- **Git** — https://git-scm.com
-- A free **GitHub** account and a free **Vercel** account (sign in to Vercel with GitHub)
+A personal portfolio built with Next.js App Router, TypeScript, Tailwind CSS, Framer Motion, and Lucide icons.
 
-## 2. Open in VS Code
-1. Unzip the project folder somewhere simple (e.g. `Documents/portfolio`).
-2. VS Code → **File → Open Folder…** → choose the `portfolio` folder.
-3. Open the built-in terminal: **Terminal → New Terminal**.
-
-## 3. Install and run
-```bash
-npm install        # once, needs internet (about a minute)
-npm run dev        # starts the site
-```
-Open http://localhost:3000. Edits to files appear instantly. Stop with `Ctrl + C`.
-
-## 4. Check and build the production version
-```bash
-npm run lint        # code-style problems
-npm run typecheck   # TypeScript errors (run after `npm run dev` or `build` once)
-npm run build       # production build, same as Vercel runs
-npm run start       # serve that build at http://localhost:3000
-```
-If `npm run build` passes, Vercel will almost certainly pass too.
+No database, paid API, or application backend is required. Portfolio content is maintained in `src/data/`.
 
 ---
 
-## 5. What you will edit
+## 1. Features
 
-| I want to change… | Edit this file |
+- Responsive personal portfolio website
+- Profile, introduction, skills, and education
+- Projects with GitHub repositories and live demos
+- Internship and experience details
+- Certifications, achievements, and publications
+- Downloadable resume and supporting documents
+- Accessibility-focused navigation and reduced-motion support
+- Security response headers configured in Next.js
+- Automated production deployments through Vercel
+
+## 2. Software Requirements
+
+- **Node.js 20 or newer (LTS):** https://nodejs.org
+- **Visual Studio Code:** https://code.visualstudio.com
+- **Git:** https://git-scm.com
+- GitHub account: https://github.com
+- Vercel account: https://vercel.com
+
+Check your Node.js installation:
+
+```bash
+node -v
+npm -v
+git --version
+```
+
+## 3. Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Sarikas-07/portfolio.git
+cd portfolio
+```
+
+Install dependencies and start the development server:
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 in your browser.
+
+Changes to source files appear automatically during development. Stop the server with `Ctrl + C`.
+
+## 4. Lint, Typecheck, and Production Build
+
+Run these commands before deploying:
+
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
+
+To run the production build locally:
+
+```bash
+npm run start
+```
+
+Open http://localhost:3000.
+
+If a command fails, inspect the first relevant error and fix it before deployment.
+
+## 5. Project Structure
+
+```text
+portfolio/
+├── app/                  # Next.js routes and layouts
+├── public/
+│   ├── certificates/     # Public certificate files
+│   ├── documents/        # Public supporting documents
+│   ├── images/           # Profile and project images
+│   ├── publications/     # Public publication documents
+│   └── resume/            # Downloadable resume
+├── src/
+│   ├── components/       # Reusable UI components
+│   ├── data/             # Portfolio content
+│   └── lib/              # Types and utility functions
+├── .gitignore
+├── next.config.mjs
+├── package.json
+└── README.md
+```
+
+## 6. Update Portfolio Content
+
+| Content | File |
 |---|---|
-| Name, intro, email, GitHub, LinkedIn, status pill, photo/resume path | `src/data/profile.ts` |
-| About text, interests, goals | `src/data/about.ts` |
+| Name, introduction, contact links, photo, resume, site URL | `src/data/profile.ts` |
+| About section | `src/data/about.ts` |
 | Skills | `src/data/skills.ts` |
 | Projects | `src/data/projects.ts` |
-| Internships / jobs | `src/data/experience.ts` |
-| Certificates | `src/data/certifications.ts` |
-| Awards, papers, copyright | `src/data/achievements.ts` |
-| Degrees | `src/data/education.ts` |
-| Colours, fonts | `tailwind.config.ts`, `app/layout.tsx` |
+| Internships and work experience | `src/data/experience.ts` |
+| Certifications | `src/data/certifications.ts` |
+| Achievements and publications | `src/data/achievements.ts` |
+| Education | `src/data/education.ts` |
+| Colours and typography | `tailwind.config.ts`, `app/layout.tsx` |
 
-You never need to touch `src/components/` to change content.
-**Optional fields can simply be deleted or commented out** — buttons for them disappear, nothing breaks.
-Lines starting with `//` are comments; remove the `//` to switch a line on.
+Content changes generally do not require editing components.
 
-### Replace the profile photo
-Overwrite `public/images/profile.jpg` with your new photo (same file name, portrait orientation, ideally under 500 KB). If you use another name or `.png`, update `photo` in `profile.ts`.
+### Update the Profile
 
-### Update the resume
-Overwrite `public/resume/Sarika_Ghorpade_Resume_final.pdf` (keep the name). The "Download Resume" button hides itself if the file is missing.
+Edit `src/data/profile.ts` to update your personal information, professional links, photo, and resume path.
 
-### Add a project
-1. (Optional) Put a screenshot in `public/images/projects/`, e.g. `my-app.png`.
-2. Add an object to the array in `src/data/projects.ts`:
+The deployed website URL is:
+
+```ts
+siteUrl: "https://sarika-portfolio-iota.vercel.app",
+```
+
+Keep your existing `profile` object and change only the relevant field.
+
+### Replace the Profile Photo
+
+Replace:
+
+`public/images/profile.jpg`
+
+Keep the same filename or update the `photo` field in `src/data/profile.ts` if the filename changes.
+
+### Update the Resume
+
+Replace the existing file:
+
+`public/resume/Sarika_Ghorpade_Resume_final.pdf`
+
+Keep the same filename to avoid changing the existing resume path.
+
+The resume URL is:
+
+https://sarika-portfolio-iota.vercel.app/resume/Sarika_Ghorpade_Resume_final.pdf
+
+Only place documents in `public/` that you are comfortable making publicly accessible.
+
+## 7. Add a Project
+
+Add an object to the array in `src/data/projects.ts`.
+
 ```ts
 {
-  slug: "my-new-project",               // unique, lowercase, hyphens — becomes /projects/my-new-project
+  slug: "my-new-project",
   title: "My New Project",
-  summary: "One or two sentences on what it does.",
-  problem: "What problem it solves.",                       // optional
-  features: ["Feature one", "Feature two"],                  // optional
-  contribution: "What I personally built.",                  // optional
+  summary: "A concise description of the application.",
+  problem: "The problem it solves.",
+  features: ["Feature one", "Feature two"],
+  contribution: "What I personally implemented.",
   stack: ["Python", "Streamlit"],
-  github: "https://github.com/Sarikas-07/my-new-project",    // optional
-  demo: "https://my-new-project.streamlit.app",              // optional
-  thumbnail: "/images/projects/my-app.png",                  // optional
-  featured: false,                                           // true = large card at the top
-  details: [{ title: "Technical notes", points: ["Detail one", "Detail two"] }], // optional
-},
+  github: "https://github.com/username/my-new-project",
+  demo: "https://example.streamlit.app",
+  thumbnail: "/images/projects/my-app.png",
+  featured: false,
+}
 ```
-To update a link or screenshot, edit that one field. Only write facts you can defend in an interview.
 
-### Add a certificate
-1. Put the PDF or image in `public/certificates/` (e.g. `python-course.pdf`). Use simple names: no spaces.
-2. Add to `src/data/certifications.ts`:
+Optional fields can be omitted when they are not applicable. Use only accurate descriptions and verifiable links.
+
+## 8. Add a Certificate
+
+1. Add the certificate PDF or image to `public/certificates/`.
+2. Add or update its entry in `src/data/certifications.ts`.
+3. Use a public file path beginning with `/certificates/`.
+
+Example:
+
 ```ts
 {
   id: "python-course",
   name: "Python for Data Science",
   issuer: "Example Academy",
   issueDate: "Mar 2026",
-  credentialId: "ABC-12345",                  // optional
-  file: "/certificates/python-course.pdf",    // makes "View Certificate" appear
-  previewImage: "/certificates/python-course.png", // optional thumbnail when file is a PDF
-  verifyUrl: "https://example.com/verify/ABC-12345", // optional
-  skills: ["Python", "Pandas"],               // optional
-},
+  file: "/certificates/python-course.pdf",
+  skills: ["Python", "Pandas"],
+}
 ```
-For your existing five entries, just drop each file in the folder and uncomment its `file:` line.
 
-### Add an achievement or a publication
-In `src/data/achievements.ts`:
+Replace the example details with the actual certificate information.
+
+## 9. Add an Achievement or Publication
+
+Edit `src/data/achievements.ts`.
+
+Example:
+
 ```ts
 {
-  id: "hackathon-2026",
-  type: "competition",          // publication | copyright | award | competition | research | other
-  title: "Finalist, Example Hackathon",
-  date: "Feb 2026",
-  organization: "Example College",
-  description: "Built a … in 24 hours.",
-  file: "/certificates/hackathon.pdf",      // optional proof
-  link: "https://example.com/results",      // optional
-},
-{
-  id: "my-second-paper",
+  id: "my-publication",
   type: "publication",
-  title: "Exact title of the paper",
+  title: "Exact title of the publication",
   date: "2027",
   organization: "Journal or conference name",
-  details: [
-    { label: "Authors", value: "A. Author, S. D. Ghorpade" },
-    { label: "DOI", value: "10.xxxx/xxxxx" },
-  ],
-  link: "https://doi.org/10.xxxx/xxxxx",
-},
+  description: "A brief, accurate description.",
+  link: "https://example.com/publication",
+}
 ```
 
-### Add experience / education
-Copy the existing object in `experience.ts` or `education.ts`, edit it, put the newest first.
+Include supporting files or links only when they are available and verified.
 
----
+## 10. Security
 
-## 6. Things still to fill or confirm (nothing is shown as fake)
-- GitHub repo link for the Legal Intelligence project (commented `github:` line in `projects.ts`).
-- Which parts of Construction Site Management System and BillSnap **you** built (`contribution`).
-- Certificate / proof files: FDP, the journal paper, the copyright certificate and supporting document, and the AMIEE membership (held back: it shows a college roll number).
-- Verify the journal paper's details (ISSN, publisher) and keep proof; verify or remove the BillSnap "Top Performer" line.
-- Real project screenshots (the current images are illustrations).
-- `siteUrl` in `profile.ts` after the first deploy (improves link previews).
-- Your phone number is **not** shown on the site. It is inside the downloadable resume PDF.
-- Re-check the PeopleBook and BillSnap demo links; they may be temporary Vercel preview URLs.
+The portfolio includes baseline security headers configured in `next.config.mjs`.
 
-## 7. Push to GitHub
-First time:
+The configured headers include:
+
+- **X-Content-Type-Options:** Helps prevent MIME-type sniffing.
+- **X-Frame-Options:** Prevents the site from being embedded in frames.
+- **Referrer-Policy:** Controls referrer information shared with other sites.
+- **Permissions-Policy:** Restricts camera, microphone, and geolocation capabilities.
+- **Strict-Transport-Security:** Instructs supporting browsers to use HTTPS after receiving the header over a secure connection.
+
+### Security Best Practices
+
+- Never commit API keys, passwords, access tokens, or private credentials.
+- Keep environment files out of Git using `.gitignore`.
+- Do not store secrets in `public/`; its contents are publicly accessible.
+- Review certificates and documents before publishing them.
+- Keep dependencies updated and review security advisories.
+- Run the production build before deploying changes.
+- Enable two-factor authentication on GitHub and Vercel.
+- Verify response headers after deployment.
+- Review any new third-party scripts or external resources before introducing a Content Security Policy.
+
+These headers are baseline protections and do not replace a complete security audit.
+
+## 11. Push Changes to GitHub
+
+For an existing repository, use:
+
 ```bash
-git init
+git status
 git add .
-git commit -m "Initial portfolio"
-git branch -M main
-git remote add origin https://github.com/Sarikas-07/portfolio.git   # create an empty repo with this name on github.com first
-git push -u origin main
-```
-Every later update:
-```bash
-git add .
-git commit -m "Add new certificate"
+git status
+git commit -m "Update portfolio documentation"
 git push
 ```
 
-## 8. Deploy on Vercel
-1. Go to https://vercel.com → **Add New… → Project**.
-2. **Import** your `portfolio` GitHub repository (allow Vercel access if asked).
-3. Leave every setting as detected (Framework: Next.js). No environment variables are needed.
-4. Click **Deploy**. In about a minute you get a `…vercel.app` URL.
-5. Paste that URL into `siteUrl` in `profile.ts`, commit and push.
+Review staged changes before committing. Do not upload secrets or private files.
 
-**Redeploy:** every `git push` to `main` redeploys automatically.
+For a new repository, configure the Git remote only once:
 
-## 9. Troubleshooting
-| Problem | Fix |
+```bash
+git init
+git branch -M main
+git remote add origin https://github.com/Sarikas-07/portfolio.git
+git add .
+git commit -m "Initial portfolio"
+git push -u origin main
+```
+
+Do not repeat `git remote add origin` if the remote is already configured.
+
+## 12. Deploy on Vercel
+
+Live website: https://sarika-portfolio-iota.vercel.app
+
+The project is already deployed on Vercel and connected to the GitHub repository.
+
+For subsequent updates:
+
+1. Commit your changes locally.
+2. Push the commit to the configured production branch.
+3. Open the project in Vercel.
+4. Wait for the new production deployment to show **Ready**.
+5. Visit the live website and verify the changes.
+
+A successful Git push does not itself guarantee a successful deployment; always check the deployment status.
+
+## 13. Troubleshooting
+
+| Problem | Solution |
 |---|---|
-| `npm: command not found` | Install Node.js, then reopen VS Code. |
-| Port 3000 busy | `npm run dev -- -p 3001` |
-| Red error about a data file | The message names the wrong field; compare with the examples above. Missing comma or quote is the usual cause. |
-| Vercel build fails but local works | Run `npm run build` locally and read the first error. Check file-name case: `Profile.jpg` ≠ `profile.jpg` on Vercel. |
-| Button/link missing | The file path is wrong or the file isn't in `public/`. Paths start with `/` and leave out `public`. |
-| Photo not showing | Check `public/images/profile.jpg` exists and `photo` in `profile.ts` matches. |
-| Changes not visible after push | Wait for the Vercel deployment to finish; hard-refresh (`Ctrl+Shift+R`). |
+| `npm` command not found | Install Node.js and reopen the terminal. |
+| Port 3000 is busy | Run `npm run dev -- -p 3001`. |
+| Build fails | Read the first relevant error and run `npm run build` locally. |
+| Resume link fails | Confirm the PDF filename and its location inside `public/`. |
+| Image is missing | Check the path and capitalization. |
+| Changes do not appear | Wait for deployment completion and hard-refresh using `Ctrl + Shift + R`. |
+| Vercel deployment fails | Inspect the deployment build logs and fix the reported error. |
+| Security headers are missing | Check the deployed response headers and the active Next.js configuration. |
+
+## 14. Technical Decisions
+
+- **Next.js App Router:** Organizes pages and routes using the App Router architecture.
+- **TypeScript:** Provides type checking for portfolio data and components.
+- **Content separation:** Typed data in `src/data/` separates portfolio information from UI presentation.
+- **Static generation:** Project pages can be generated at build time where configured.
+- **Accessibility:** Semantic landmarks, keyboard navigation, visible focus states, and reduced-motion support improve usability.
+- **Performance:** Uses Next.js image and font optimizations where configured.
+- **Contact:** Uses a `mailto:` link rather than presenting a non-functional contact form.
+- **Security:** Applies baseline HTTP response headers through the Next.js configuration.
+- **Deployment:** GitHub and Vercel support version-controlled updates and production builds.
 
 ---
 
-## 10. Technical decisions (for interviews)
-- **App Router + static generation:** every page, including `/projects/[slug]`, is pre-rendered at build time via `generateStaticParams`, so the site is fast and needs no server.
-- **Content separated from presentation:** typed objects in `src/data/` (types in `src/lib/types.ts`) mean the compiler catches content mistakes and components never change when content does.
-- **No broken links:** `publicFileExists()` (server-side, `src/lib/assets.ts`) checks that referenced files exist at build time and hides buttons otherwise.
-- **Design tokens:** colours, fonts and animations are defined once in `tailwind.config.ts` and `globals.css`.
-- **Motion with restraint:** one orchestrated hero entrance, small one-time scroll reveals, optional cursor glow and magnetic buttons on fine-pointer devices only. All motion is switched off for `prefers-reduced-motion`; scrolling is never hijacked.
-- **Accessibility:** skip link, semantic landmarks, labelled icon buttons, visible focus rings, `aria-current` in the nav, keyboard-closable mobile menu.
-- **Contact:** a real `mailto:` link rather than a form, because there is no backend and a fake "sent" message would be dishonest.
-- **Performance:** `next/image` with `priority` for the hero photo, `next/font` self-hosting, decorative background in pure CSS/SVG, no Three.js (it would not improve this design).
+## Author
+
+**Sarika Ghorpade**
+
+- Portfolio: https://sarika-portfolio-iota.vercel.app
+- GitHub: https://github.com/Sarikas-07
+- LinkedIn: https://www.linkedin.com/in/sarika-ghorpade-3a234930a
+- Email: sarikas9266@gmail.com
+
