@@ -56,7 +56,7 @@ Lines starting with `//` are comments; remove the `//` to switch a line on.
 Overwrite `public/images/profile.jpg` with your new photo (same file name, portrait orientation, ideally under 500 KB). If you use another name or `.png`, update `photo` in `profile.ts`.
 
 ### Update the resume
-Overwrite `public/resume/Sarika_Ghorpade_Resume.pdf` (keep the name). The "Download Resume" button hides itself if the file is missing.
+Overwrite `public/resume/Sarika_Ghorpade_Resume_final.pdf` (keep the name). The "Download Resume" button hides itself if the file is missing.
 
 ### Add a project
 1. (Optional) Put a screenshot in `public/images/projects/`, e.g. `my-app.png`.

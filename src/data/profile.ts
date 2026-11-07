@@ -24,7 +24,7 @@ export const profile: Profile = {
 
   photo: "/images/profile.jpg",
   photoAlt: "Portrait of Sarika Ghorpade in a navy blazer and white shirt",
-  resume: "/resume/Sarika_Ghorpade_Resume.pdf",
+  resume: "/resume/Sarika_Ghorpade_Resume_final.pdf",
 
   // TODO: after your first Vercel deploy, paste your live URL here (e.g. "https://sarika-ghorpade.vercel.app")
   siteUrl: undefined,
